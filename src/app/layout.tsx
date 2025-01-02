@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import { ReactNode } from "react";
 import "./globals.css";
-
+import Logo from "./Logo";
 export const metadata: Metadata = {
   title: "TodoList",
   description: "made by next15",
@@ -17,7 +16,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <header>
-          <button>로고</button>
+          <Logo />
         </header>
         <main>{children}</main>
       </body>
