@@ -1,0 +1,107 @@
+.inputContainer {
+  gap: 16px;
+  margin: 24px 24px 40px 24px;
+  height: 56px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .input,
+  .addButton {
+    border-radius: 24px;
+    border: 2px solid var(--slate900);
+    box-shadow: 3px 3px 0px 0px black;
+  }
+
+  .input {
+    width: 80%;
+    height: 100%;
+
+    padding: 0 24px 0 24px;
+  }
+
+  .addButton {
+    width: 20%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: var(--slate200);
+
+    gap: 4px;
+
+    @media (max-width: 375px) {
+      p {
+        display: none;
+      }
+    }
+  }
+}
+
+.todoListContainer {
+  display: flex;
+  gap: 24px;
+  margin: 0 24px 0 24px;
+
+  .title {
+    width: 101px;
+    height: 36px;
+    border-radius: 23px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .commonContainer {
+    max-width: 632px;
+    width: 100%;
+  }
+
+  @media (max-width: 744px) {
+    flex-direction: column;
+    gap: 48px;
+
+    .commonContainer {
+      max-width: 100%;
+    }
+  }
+
+  .todoContainer {
+    .title {
+      background-color: var(--lime300);
+      color: var(--green700);
+    }
+  }
+
+  .doneContainer {
+    .title {
+      background-color: var(--green700);
+      color: var(--amber300);
+    }
+
+    .item {
+      background-color: var(--violet100);
+      text-decoration: line-through;
+    }
+  }
+}
+
+.item {
+  height: 50px;
+  border-radius: 27px;
+  border: 2px solid var(--slate900);
+  gap: 16px;
+
+  padding: 0 12px 0 12px;
+  margin-top: 16px;
+
+  display: flex;
+  align-items: center;
+  p {
+    color: var(--slate800);
+  }
+}

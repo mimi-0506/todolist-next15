@@ -1,5 +1,5 @@
 "use client";
-import Image from "next/image";
+
 export default function Logo() {
   const handleRedirect = () => {
     window.location.href = "/";
