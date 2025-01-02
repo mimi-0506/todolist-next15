@@ -6,8 +6,13 @@ export default function Logo() {
   };
 
   return (
-    <button onClick={handleRedirect}>
-      <Image src={"/svg/logo/big.svg"} alt={"logo"} width={100} height={100} />
-    </button>
+    <div className="dynamicWidth">
+      <button onClick={handleRedirect}>
+        <picture>
+          <source srcSet="/svg/logo/small.svg" media="(max-width: 375px)" />
+          <img src="/svg/logo/big.svg" alt="Responsive" />
+        </picture>
+      </button>
+    </div>
   );
 }
