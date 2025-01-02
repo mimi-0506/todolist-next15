@@ -1,13 +1,19 @@
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+  --slate900: #0f172a;
+  --slate800: #1e293b;
+  --slate500: #64748b;
+  --slate400: #94a3b8;
+  --slate300: #cbd5e1;
+  --slate200: #e2e8f0;
+  --slate100: #f1f5f9;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --violet600: ##7c3aed;
+  --violet100: ##ede9fe;
+
+  --rose500: #f43f5e;
+  --lime300: #bef264;
+
+  --amber800: #92400e;
 }
 
 html,
@@ -17,8 +23,6 @@ body {
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -35,8 +39,8 @@ a {
   text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+button {
+  color: inherit;
+  background-color: inherit;
+  border: none;
 }
