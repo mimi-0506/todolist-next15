@@ -19,6 +19,7 @@
     border-radius: 24px;
     border: 2px solid var(--slate900);
     text-decoration: underline;
+    font-size: 20px;
 
     display: flex;
     justify-content: center;
