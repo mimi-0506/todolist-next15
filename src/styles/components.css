@@ -16,14 +16,21 @@
   .addButton {
     width: 20%;
     height: 100%;
+    min-width: 162px;
 
     background-color: var(--slate200);
 
     @media (max-width: 375px) {
+      min-width: 56px;
       p {
         display: none;
       }
     }
+  }
+
+  .dataNone {
+    background-color: var(--violet600);
+    color: white;
   }
 }
 
