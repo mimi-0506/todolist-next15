@@ -26,13 +26,23 @@ export default function TodoLists() {
   return (
     <div className="todoListContainer">
       <div className="commonContainer todoContainer">
-        <div className="title">TO DO</div>
         <Item value={{ text: "test1", state: true }} />
+        <Image
+          src="/svg/title_todo.svg"
+          alt="Responsive"
+          width="101"
+          height="36"
+        />
       </div>
 
       <div className="commonContainer doneContainer">
-        <div className="title">DONE</div>
         <Item value={{ text: "test2", state: false }} />
+        <Image
+          src="/svg/title_done.svg"
+          alt="Responsive"
+          width="101"
+          height="36"
+        />
       </div>
     </div>
   );
