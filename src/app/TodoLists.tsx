@@ -12,7 +12,7 @@ const Item = ({ value }: { value: dataType }) => {
   return (
     <div className="item">
       <Image
-        src={state ? "./svg/todo.svg" : "./svg/done.svg"}
+        src={state ? "/svg/todo.svg" : "/svg/done.svg"}
         alt="Responsive"
         width="32"
         height="32"
