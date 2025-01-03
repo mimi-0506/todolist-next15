@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import { ReactNode } from "react";
-import "./globals.css";
-import Logo from "./Logo";
+import "@/styles/globals.css";
+import Logo from "../components/Logo";
 import localFont from "next/font/local";
+import { TodoListStoreProvider } from "@/providers/store-provider";
 
 export const metadata: Metadata = {
   title: "TodoList",
@@ -31,13 +32,15 @@ export default function RootLayout({
   children: ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={defaultFont.className}>
-        <header>
-          <Logo />
-        </header>
-        <main>{children}</main>
-      </body>
-    </html>
+    <TodoListStoreProvider>
+      <html lang="en">
+        <body className={defaultFont.className}>
+          <header>
+            <Logo />
+          </header>
+          <main>{children}</main>
+        </body>
+      </html>
+    </TodoListStoreProvider>
   );
 }

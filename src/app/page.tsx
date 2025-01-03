@@ -1,5 +1,5 @@
-import Input from "./Input";
-import TodoLists from "./TodoLists";
+import Input from "@/components/Input";
+import TodoLists from "@/components/TodoLists";
 
 export default function Home() {
   return (

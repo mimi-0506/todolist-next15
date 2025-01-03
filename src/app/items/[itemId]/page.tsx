@@ -1,5 +1,5 @@
 import Image from "next/image";
-import "./detail.css";
+import "@/styles/detail.css";
 
 export default function Item() {
   //const {text, state} = props;
