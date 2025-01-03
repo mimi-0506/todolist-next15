@@ -6,7 +6,7 @@ export default function Logo() {
   };
 
   return (
-    <div className="dynamicWidth">
+    <div className="logoContainer">
       <button onClick={handleRedirect}>
         <picture>
           <source srcSet="/svg/logo/small.svg" media="(max-width: 375px)" />

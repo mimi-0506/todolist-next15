@@ -3,7 +3,7 @@ import TodoLists from "./TodoLists";
 
 export default function Home() {
   return (
-    <div className="dynamicWidth">
+    <div className="rootContainer dynamic">
       <Input />
       <TodoLists />
     </div>
