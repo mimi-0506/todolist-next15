@@ -4,15 +4,22 @@ import useDataStateModify from "../hooks/useDataStateModify";
 import useGetDetailData from "../hooks/useGetDetailData";
 import { useState } from "react";
 import { ButtonLoading } from "./Loading";
+import { useRouter } from "next/navigation";
 
 export default function Item({ value }: { value: mainDatas }) {
+  const router = useRouter();
+
   const { name, isCompleted } = value;
   const [loading, setLoading] = useState(false);
 
   const { getDetailData } = useGetDetailData();
   const { modifyState } = useDataStateModify();
 
-  const handleState = async () => {
+  const handleState = async (
+    e: React.MouseEvent<HTMLImageElement, MouseEvent>
+  ) => {
+    e.stopPropagation();
+
     setLoading(true);
 
     const detailData = await getDetailData(value.id);
@@ -27,8 +34,12 @@ export default function Item({ value }: { value: mainDatas }) {
     );
   };
 
+  const handleClicktoMove = () => {
+    router.push(`/items/${value.id}`);
+  };
+
   return (
-    <div className="item">
+    <div className="item" onClick={handleClicktoMove}>
       {loading ? (
         <ButtonLoading />
       ) : (

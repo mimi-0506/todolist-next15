@@ -46,11 +46,11 @@ export default function Input() {
   const [loading, setLoading] = useState(false);
 
   const handleAdd = async () => {
-    if (!inputRef.current) return;
+    if (!inputRef.current || loading) return;
 
     const value = inputRef.current.value;
 
-    if (value && !loading) {
+    if (value) {
       setLoading(true);
       await setDatas(value);
       setLoading(false);
