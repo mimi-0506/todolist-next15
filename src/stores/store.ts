@@ -1,8 +1,8 @@
 import { createStore } from "zustand/vanilla";
 
 export type TodoListState = {
-  todos: [];
-  dones: [];
+  todos: [] | null;
+  dones: [] | null;
 };
 
 export type TodoListActions = {
@@ -13,8 +13,8 @@ export type TodoListActions = {
 export type TodoListStore = TodoListState & TodoListActions;
 
 export const defaultInitState: TodoListState = {
-  todos: [],
-  dones: [],
+  todos: null,
+  dones: null,
 };
 
 export const createTodoListStore = (

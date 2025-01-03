@@ -6,6 +6,7 @@ import Item from "./Item";
 import { useEffect } from "react";
 import Image from "next/image";
 import { useTodoListStore } from "@/providers/store-provider";
+import { AreaLoading } from "./Loading";
 
 const StateBasedContent = ({
   array,
@@ -14,7 +15,7 @@ const StateBasedContent = ({
   array: [] | null;
   name: string;
 }) => {
-  if (!Array.isArray(array)) return <div>로딩중</div>;
+  if (!Array.isArray(array)) return <AreaLoading />;
   else {
     if (array.length)
       return array.map((now: mainDatas) => {
