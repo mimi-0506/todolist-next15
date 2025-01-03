@@ -1,5 +1,4 @@
 .inputContainer {
-  padding-top: 24px !important;
   gap: 16px;
   margin: 24px 24px 40px 24px;
   height: 56px;
@@ -46,6 +45,27 @@
   .commonContainer {
     max-width: 632px;
     width: 100%;
+
+    .emptyContainer {
+      gap: 24px;
+      color: var(--slate400);
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+
+      img {
+        width: 240px;
+        height: 240px;
+
+        @media (max-width: 375px) {
+          width: 120px;
+          height: 120px;
+        }
+      }
+    }
   }
 
   @media (max-width: 744px) {
