@@ -13,12 +13,12 @@ export const metadata: Metadata = {
 const defaultFont = localFont({
   src: [
     {
-      path: "./font/NanumSquareR.ttf",
+      path: "./NanumSquareR.ttf",
       weight: "400",
       style: "normal",
     },
     {
-      path: "./font/NanumSquareB.ttf",
+      path: "./NanumSquareB.ttf",
       weight: "400",
       style: "bold",
     },

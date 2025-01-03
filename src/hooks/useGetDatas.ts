@@ -1,5 +1,5 @@
 import { mainDatas } from "../types/types";
-import { URL } from "../constants/constants";
+import { URL } from "../lib/constants";
 import { useTodoListStore } from "@/providers/store-provider";
 
 export default function useGetDatas() {

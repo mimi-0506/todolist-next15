@@ -1,4 +1,4 @@
-import { URL } from "../constants/constants";
+import { URL } from "../lib/constants";
 import useGetDatas from "./useGetDatas";
 
 export default function useSetDatas() {

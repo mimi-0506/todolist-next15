@@ -1,4 +1,4 @@
-import { URL } from "../constants/constants";
+import { URL } from "../lib/constants";
 import { modifyData } from "../types/types";
 import useGetDatas from "./useGetDatas";
 
