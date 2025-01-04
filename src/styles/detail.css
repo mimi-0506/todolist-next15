@@ -60,6 +60,7 @@
       align-items: center;
 
       position: relative;
+      overflow: hidden;
 
       button {
         width: 64px;
@@ -106,12 +107,23 @@
         color: var(--amber800);
       }
 
-      p {
+      .textareaContainer {
         height: 90%;
-        color: var(--slate800);
         display: flex;
         justify-content: center;
         align-items: center;
+      }
+
+      textarea {
+        min-width: 100%;
+
+        border: none;
+        background-color: inherit;
+        font-size: inherit;
+
+        color: var(--slate800);
+
+        text-align: center;
       }
     }
   }

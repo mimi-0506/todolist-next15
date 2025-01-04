@@ -2,9 +2,10 @@
 
 import "@/styles/detail.css";
 import useGetDetailData from "@/hooks/useGetDetailData";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { AreaLoading, FullLoading } from "@/components/common/Loading";
 import Name from "@/components/detail/Name";
+import Memo from "@/components/detail/Memo";
 import DeleteButton from "@/components/detail/DeleteButton";
 import { useTodoListStore } from "@/providers/store-provider";
 
@@ -19,7 +20,6 @@ export default function Item({
 
   const [loading, setLoading] = useState(false);
   const { getDetailData } = useGetDetailData();
-
 
   useEffect(() => {
     getDatas();
@@ -49,6 +49,7 @@ export default function Item({
         <>
           <Name />
           <div className="main">
+            <Memo />
           </div>
           <div className="buttonContainer">
             <DeleteButton startLoading={startLoading} id={id} />
