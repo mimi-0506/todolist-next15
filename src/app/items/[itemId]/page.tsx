@@ -1,6 +1,7 @@
 "use client";
 
 import "@/styles/detail.css";
+import "@/styles/components.css";
 import useGetDetailData from "@/hooks/useGetDetailData";
 import { useEffect, useState } from "react";
 import { AreaLoading, FullLoading } from "@/components/common/Loading";

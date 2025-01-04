@@ -2,8 +2,8 @@ import { modifyData } from "@/types/types";
 import { createStore } from "zustand/vanilla";
 
 export type TodoListState = {
-  todos: [] | null;
-  dones: [] | null;
+  todos: [];
+  dones: [];
   detail: modifyData | null;
 };
 
@@ -16,8 +16,8 @@ export type TodoListActions = {
 export type TodoListStore = TodoListState & TodoListActions;
 
 export const defaultInitState: TodoListState = {
-  todos: null,
-  dones: null,
+  todos: [],
+  dones: [],
   detail: null,
 };
 
