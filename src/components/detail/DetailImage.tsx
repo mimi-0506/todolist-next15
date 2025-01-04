@@ -3,10 +3,14 @@
 import Image from "next/image";
 import { useState, useRef, useEffect } from "react";
 import { useTodoListStore } from "@/providers/store-provider";
+import useSetImage from "@/hooks/useSetImage";
+import { AreaLoading } from "../common/Loading";
 
 export default function DetailImage() {
   const { detail, setDetail } = useTodoListStore((state) => state);
+  const { setImage } = useSetImage();
   const [error, setError] = useState<string>("");
+  const [loading, setLoading] = useState(false);
   const imageRef = useRef(null);
 
   const reader = new FileReader();
@@ -18,6 +22,7 @@ export default function DetailImage() {
   const handleImageUpload = async (
     event: React.ChangeEvent<HTMLInputElement>
   ) => {
+    setLoading(true);
     const file = event.target.files?.[0];
 
     if (!file) return;
@@ -34,11 +39,9 @@ export default function DetailImage() {
       return;
     }
 
-    reader.onload = () => {
-      setDetail({ ...detail, imageUrl: reader.result });
-    };
-
-    reader.readAsDataURL(file);
+    const imageUrl = await setImage(file);
+    console.log(imageUrl);
+    setDetail({ ...detail, imageUrl: imageUrl });
 
     setError("");
   };
@@ -55,25 +58,29 @@ export default function DetailImage() {
         <Image src="/svg/empty.svg" alt="Responsive" width="64" height="64" />
       )}
 
-      <button
-        className={detail?.imageUrl ? "edit" : ""}
-        onClick={handleAddImage}
-      >
-        <Image
-          src={detail?.imageUrl ? "/svg/edit.svg" : "/svg/plus.svg"}
-          alt="Responsive"
-          width="24"
-          height="24"
-        />
+      {loading ? (
+        <AreaLoading />
+      ) : (
+        <button
+          className={detail?.imageUrl ? "edit" : ""}
+          onClick={handleAddImage}
+        >
+          <Image
+            src={detail?.imageUrl ? "/svg/edit.svg" : "/svg/plus.svg"}
+            alt="Responsive"
+            width="24"
+            height="24"
+          />
 
-        <input
-          ref={imageRef}
-          type="file"
-          accept="image/*"
-          style={{ display: "none" }}
-          onChange={handleImageUpload}
-        />
-      </button>
+          <input
+            ref={imageRef}
+            type="file"
+            accept="image/*"
+            style={{ display: "none" }}
+            onChange={handleImageUpload}
+          />
+        </button>
+      )}
     </div>
   );
 }

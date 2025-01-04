@@ -15,7 +15,7 @@ export interface mainDatas {
 
 export interface modifyData {
   name: string;
-  memo: string;
-  imageUrl: string;
+  memo: string | null;
+  imageUrl: string | null;
   isCompleted: boolean;
 }
