@@ -26,6 +26,14 @@
     align-items: center;
 
     gap: 16px;
+
+    input {
+      border: none;
+      background-color: inherit;
+      font-size: inherit;
+      width: 100%;
+      text-align: center;
+    }
   }
 
   .doneBackground {

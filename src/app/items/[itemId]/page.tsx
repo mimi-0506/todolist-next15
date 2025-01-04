@@ -4,6 +4,7 @@ import "@/styles/detail.css";
 import useGetDetailData from "@/hooks/useGetDetailData";
 import { useEffect, useRef, useState } from "react";
 import { AreaLoading, FullLoading } from "@/components/common/Loading";
+import Name from "@/components/detail/Name";
 import DeleteButton from "@/components/detail/DeleteButton";
 import { useTodoListStore } from "@/providers/store-provider";
 
@@ -46,6 +47,7 @@ export default function Item({
 
       {detail ? (
         <>
+          <Name />
           <div className="main">
           </div>
           <div className="buttonContainer">
