@@ -5,7 +5,7 @@ import useGetDatas from "./useGetDatas";
 export default function useDataStateModify() {
   const { getDatas } = useGetDatas();
 
-  const modifyState = async (value: modifyData, id: number) => {
+  const modifyState = async (value: modifyData, id: number | string) => {
     const data = await fetch(`${URL}/items/${id}`, {
       method: "PATCH",
       headers: {

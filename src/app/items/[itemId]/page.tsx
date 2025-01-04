@@ -7,6 +7,7 @@ import { AreaLoading, FullLoading } from "@/components/common/Loading";
 import Name from "@/components/detail/Name";
 import DetailImage from "@/components/detail/DetailImage";
 import Memo from "@/components/detail/Memo";
+import ModifyButton from "@/components/detail/ModifyButton";
 import DeleteButton from "@/components/detail/DeleteButton";
 import { useTodoListStore } from "@/providers/store-provider";
 
@@ -54,6 +55,7 @@ export default function Item({
             <Memo />
           </div>
           <div className="buttonContainer">
+            <ModifyButton startLoading={startLoading} id={id} />
             <DeleteButton startLoading={startLoading} id={id} />
           </div>
         </>
