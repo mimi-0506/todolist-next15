@@ -4,6 +4,7 @@ import "@/styles/detail.css";
 import useGetDetailData from "@/hooks/useGetDetailData";
 import { useEffect, useRef, useState } from "react";
 import { AreaLoading, FullLoading } from "@/components/common/Loading";
+import DeleteButton from "@/components/detail/DeleteButton";
 import { useTodoListStore } from "@/providers/store-provider";
 
 export default function Item({
@@ -48,6 +49,7 @@ export default function Item({
           <div className="main">
           </div>
           <div className="buttonContainer">
+            <DeleteButton startLoading={startLoading} id={id} />
           </div>
         </>
       ) : (
