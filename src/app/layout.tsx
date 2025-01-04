@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { ReactNode } from "react";
 import "@/styles/globals.css";
-import Logo from "../components/Logo";
+import Logo from "../components/header/Logo";
 import localFont from "next/font/local";
 import { TodoListStoreProvider } from "@/providers/store-provider";
 

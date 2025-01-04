@@ -1,9 +1,9 @@
 import { mainDatas } from "@/types/types";
 import Image from "next/image";
-import useDataStateModify from "../hooks/useDataStateModify";
-import useGetDetailData from "../hooks/useGetDetailData";
+import useDataStateModify from "../../hooks/useDataStateModify";
+import useGetDetailData from "../../hooks/useGetDetailData";
 import { useState } from "react";
-import { ButtonLoading } from "./Loading";
+import { ButtonLoading } from "../common/Loading";
 import { useRouter } from "next/navigation";
 
 export default function Item({ value }: { value: mainDatas }) {

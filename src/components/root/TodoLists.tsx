@@ -1,12 +1,12 @@
 "use client";
 import "@/styles/components.css";
-import useGetDatas from "../hooks/useGetDatas";
-import { mainDatas } from "../types/types";
+import useGetDatas from "../../hooks/useGetDatas";
+import { mainDatas } from "../../types/types";
 import Item from "./Item";
 import { useEffect } from "react";
 import Image from "next/image";
 import { useTodoListStore } from "@/providers/store-provider";
-import { AreaLoading } from "./Loading";
+import { AreaLoading } from "../common/Loading";
 
 const StateBasedContent = ({
   array,

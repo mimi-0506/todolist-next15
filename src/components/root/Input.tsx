@@ -3,9 +3,9 @@
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import "@/styles/components.css";
-import useSetDatas from "../hooks/useSetDatas";
+import useSetDatas from "../../hooks/useSetDatas";
 import { useTodoListStore } from "@/providers/store-provider";
-import { ButtonLoading } from "./Loading";
+import { ButtonLoading } from "../common/Loading";
 
 const AddButton = ({
   handleAdd,
