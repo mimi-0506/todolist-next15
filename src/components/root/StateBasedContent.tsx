@@ -1,12 +1,11 @@
 import { mainDatas } from "@/types/types";
-import { AreaLoading } from "../common/Loading";
 import Item from "./Item";
 
 export default function StateBasedContent({
   array,
   name,
 }: {
-  array: [];
+  array: mainDatas[];
   name: string;
 }) {
   if (array.length)

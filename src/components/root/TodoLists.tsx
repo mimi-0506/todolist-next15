@@ -23,8 +23,8 @@ export default function TodoLists() {
     setLoading(true);
     const datas = await getDatas();
 
-    const todoArray = [];
-    const doneArray = [];
+    const todoArray: mainDatas[] = [];
+    const doneArray: mainDatas[] = [];
 
     datas.forEach((now: mainDatas) => {
       if (now.isCompleted) doneArray.push(now);

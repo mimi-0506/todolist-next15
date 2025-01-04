@@ -1,15 +1,15 @@
-import { modifyData } from "@/types/types";
+import { mainDatas, modifyData } from "@/types/types";
 import { createStore } from "zustand/vanilla";
 
 export type TodoListState = {
-  todos: [];
-  dones: [];
+  todos: mainDatas[];
+  dones: mainDatas[];
   detail: modifyData | null;
 };
 
 export type TodoListActions = {
-  setTodos: (newTodos: []) => void;
-  setDones: (newDones: []) => void;
+  setTodos: (newTodos: mainDatas[]) => void;
+  setDones: (newDones: mainDatas[]) => void;
   setDetail: (newDetail: modifyData) => void;
 };
 
