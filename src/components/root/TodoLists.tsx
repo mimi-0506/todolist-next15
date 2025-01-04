@@ -5,13 +5,11 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import { useTodoListStore } from "@/providers/store-provider";
 import StateBasedContent from "./StateBasedContent";
-import { mainDatas } from "@/types/types";
+
 import { AreaLoading } from "../common/Loading";
 
 export default function TodoLists() {
-  const { todos, dones, setTodos, setDones } = useTodoListStore(
-    (state) => state
-  );
+  const { todos, dones } = useTodoListStore((state) => state);
   const { getDatas } = useGetDatas();
   const [loading, setLoading] = useState(false);
 
@@ -21,18 +19,7 @@ export default function TodoLists() {
 
   const getTodoListDatas = async () => {
     setLoading(true);
-    const datas = await getDatas();
-
-    const todoArray: mainDatas[] = [];
-    const doneArray: mainDatas[] = [];
-
-    datas.forEach((now: mainDatas) => {
-      if (now.isCompleted) doneArray.push(now);
-      else todoArray.push(now);
-    });
-
-    setTodos(todoArray);
-    setDones(doneArray);
+    await getDatas();
     setLoading(false);
   };
 
