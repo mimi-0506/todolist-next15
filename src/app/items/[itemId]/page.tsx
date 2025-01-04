@@ -5,6 +5,7 @@ import useGetDetailData from "@/hooks/useGetDetailData";
 import { useEffect, useState } from "react";
 import { AreaLoading, FullLoading } from "@/components/common/Loading";
 import Name from "@/components/detail/Name";
+import DetailImage from "@/components/detail/DetailImage";
 import Memo from "@/components/detail/Memo";
 import DeleteButton from "@/components/detail/DeleteButton";
 import { useTodoListStore } from "@/providers/store-provider";
@@ -49,6 +50,7 @@ export default function Item({
         <>
           <Name />
           <div className="main">
+            <DetailImage />
             <Memo />
           </div>
           <div className="buttonContainer">
