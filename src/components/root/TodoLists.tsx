@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import { useTodoListStore } from "@/providers/store-provider";
 import StateBasedContent from "./StateBasedContent";
-
+import { AnimatePresence } from "framer-motion";
 import { AreaLoading } from "../common/Loading";
 
 export default function TodoLists() {
@@ -24,34 +24,36 @@ export default function TodoLists() {
   };
 
   return (
-    <div className="todoListContainer">
-      <div className="commonContainer todoContainer">
-        <Image
-          src="/svg/title_todo.svg"
-          alt="Responsive"
-          width="101"
-          height="36"
-        />
-        {loading ? (
-          <AreaLoading />
-        ) : (
-          <StateBasedContent array={todos} name="empty_todo" />
-        )}
-      </div>
+    <AnimatePresence>
+      <div className="todoListContainer">
+        <div className="commonContainer todoContainer">
+          <Image
+            src="/svg/title_todo.svg"
+            alt="Responsive"
+            width="101"
+            height="36"
+          />
+          {loading ? (
+            <AreaLoading />
+          ) : (
+            <StateBasedContent array={todos} name="empty_todo" />
+          )}
+        </div>
 
-      <div className="commonContainer doneContainer">
-        <Image
-          src="/svg/title_done.svg"
-          alt="Responsive"
-          width="101"
-          height="36"
-        />
-        {loading ? (
-          <AreaLoading />
-        ) : (
-          <StateBasedContent array={dones} name="empty_done" />
-        )}
+        <div className="commonContainer doneContainer">
+          <Image
+            src="/svg/title_done.svg"
+            alt="Responsive"
+            width="101"
+            height="36"
+          />
+          {loading ? (
+            <AreaLoading />
+          ) : (
+            <StateBasedContent array={dones} name="empty_done" />
+          )}
+        </div>
       </div>
-    </div>
+    </AnimatePresence>
   );
 }

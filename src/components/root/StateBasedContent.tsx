@@ -1,5 +1,6 @@
 import { mainDatas } from "@/types/types";
 import Item from "./Item";
+import { motion } from "framer-motion";
 
 export default function StateBasedContent({
   array,
@@ -9,9 +10,40 @@ export default function StateBasedContent({
   name: string;
 }) {
   if (array.length)
-    return array.map((now: mainDatas) => {
-      return <Item value={now} key={now.name} />;
-    });
+    return (
+      <motion.div
+        className="itemContainer"
+        initial="hidden"
+        animate="visible"
+        variants={{
+          hidden: { opacity: 0 },
+          visible: {
+            opacity: 1,
+            transition: {
+              staggerChildren: 0.3,
+            },
+          },
+        }}
+      >
+        {array.map((now) => (
+          <motion.div
+            key={now.name}
+            initial={{ x: -200, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            exit={{ x: 200, opacity: 0 }}
+            transition={{
+              type: "spring",
+              stiffness: 300,
+              damping: 20,
+              bounce: 0.5,
+              delay: 0.2,
+            }}
+          >
+            <Item value={now} />
+          </motion.div>
+        ))}
+      </motion.div>
+    );
   else
     return (
       <div className="emptyContainer">
