@@ -3,6 +3,7 @@
 import "@/styles/detail.css";
 import useGetDetailData from "@/hooks/useGetDetailData";
 import { useEffect, useRef, useState } from "react";
+import { AreaLoading, FullLoading } from "@/components/common/Loading";
 import { useTodoListStore } from "@/providers/store-provider";
 
 export default function Item({
@@ -40,6 +41,7 @@ export default function Item({
 
   return (
     <div className="detailContainer dynamic">
+      {loading ? <FullLoading /> : <></>}
 
       {detail ? (
         <>
