@@ -5,11 +5,13 @@ export default function Memo() {
   const { detail, setDetail } = useTodoListStore((state) => state);
   const memoRef = useRef(null);
 
-  const handleMemoClick = (e) => {
+  const handleMemoClick = () => {
     memoRef.current?.focus();
   };
 
-  const handleMemoModify = (e) => {
+  const handleMemoModify = (
+    e: React.FocusEvent<HTMLTextAreaElement, Element>
+  ) => {
     if (detail && e.target.value !== detail?.name)
       setDetail({ ...detail, memo: e.target.value });
   };

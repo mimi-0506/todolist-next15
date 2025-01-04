@@ -7,13 +7,6 @@ export interface Item {
   isCompleted: boolean;
 }
 
-export interface UpdateItemDto {
-  name: string;
-  memo: string;
-  imageUrl: string;
-  isCompleted: boolean;
-}
-
 export interface mainDatas {
   id: number;
   name: string;

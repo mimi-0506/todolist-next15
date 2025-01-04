@@ -17,7 +17,7 @@ export default function Memo() {
     setModify((x) => !x);
   };
 
-  const handleNameModify = (e) => {
+  const handleNameModify = (e: React.FocusEvent<HTMLInputElement, Element>) => {
     if (detail && e.target.value !== detail?.name)
       setDetail({ ...detail, name: e.target.value });
     setModify(false);
