@@ -24,7 +24,7 @@ export default function DeleteButton({
 
   return (
     <button className="deleteButton shape_1" onClick={handleDelete}>
-      <Image src="/svg/X.svg" alt="Responsive" width="16" height="16" />
+      <Image src="/svg/X.svg" alt="deleteButton" width="16" height="16" />
       삭제하기
     </button>
   );

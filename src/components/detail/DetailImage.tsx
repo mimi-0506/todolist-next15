@@ -54,9 +54,9 @@ export default function DetailImage() {
   return (
     <div className="imageContainer">
       {detail?.imageUrl ? (
-        <Image src={detail.imageUrl} alt="Responsive" fill />
+        <Image src={detail.imageUrl} alt="detailImage" fill />
       ) : (
-        <Image src="/svg/empty.svg" alt="Responsive" width="64" height="64" />
+        <Image src="/svg/empty.svg" alt="emptyImage" width="64" height="64" />
       )}
 
       <button
@@ -68,7 +68,7 @@ export default function DetailImage() {
         ) : (
           <Image
             src={detail?.imageUrl ? "/svg/edit.svg" : "/svg/plus.svg"}
-            alt="Responsive"
+            alt="editButton"
             width="24"
             height="24"
           />

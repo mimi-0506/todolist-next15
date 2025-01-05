@@ -27,12 +27,7 @@ export default function TodoLists() {
     <AnimatePresence>
       <div className="todoListContainer">
         <div className="commonContainer todoContainer">
-          <Image
-            src="/svg/title_todo.svg"
-            alt="Responsive"
-            width="101"
-            height="36"
-          />
+          <Image src="/svg/title_todo.svg" alt="todo" width="101" height="36" />
           {loading ? (
             <AreaLoading />
           ) : (
@@ -41,12 +36,7 @@ export default function TodoLists() {
         </div>
 
         <div className="commonContainer doneContainer">
-          <Image
-            src="/svg/title_done.svg"
-            alt="Responsive"
-            width="101"
-            height="36"
-          />
+          <Image src="/svg/title_done.svg" alt="done" width="101" height="36" />
           {loading ? (
             <AreaLoading />
           ) : (

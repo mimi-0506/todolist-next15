@@ -27,11 +27,11 @@ const AddButton = ({
         <>
           <Image
             src={`/svg/${state ? "plus_none" : "plus"}.svg`}
-            alt="Responsive"
+            alt="addButton"
             width="16"
             height="16"
           />
-          <p>추가하기</p>{" "}
+          <p>추가하기</p>
         </>
       )}
     </button>

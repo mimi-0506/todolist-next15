@@ -10,7 +10,7 @@ export default function Logo() {
       <button onClick={handleRedirect}>
         <picture>
           <source srcSet="/svg/logo/small.svg" media="(max-width: 375px)" />
-          <img src="/svg/logo/big.svg" alt="Responsive" />
+          <img src="/svg/logo/big.svg" alt="logo" />
         </picture>
       </button>
     </div>

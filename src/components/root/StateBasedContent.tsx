@@ -56,7 +56,7 @@ export default function StateBasedContent({
             srcSet={`/images/${name}/medium.png`}
             media="(max-width: 1919px, min-width: 743px)"
           />
-          <img src={`/images/${name}/big.png`} alt="Responsive" />
+          <img src={`/images/${name}/big.png`} alt="empty" />
         </picture>
 
         <p>

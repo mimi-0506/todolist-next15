@@ -32,7 +32,7 @@ export default function ModifyButton({
 
   return (
     <button className="modifyButton shape_1" onClick={handleModify}>
-      <Image src="/svg/check.svg" alt="Responsive" width="16" height="16" />
+      <Image src="/svg/check.svg" alt="modifyButton" width="16" height="16" />
       수정 완료
     </button>
   );

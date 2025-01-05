@@ -45,7 +45,7 @@ export default function Item({ value }: { value: mainDatas }) {
       ) : (
         <Image
           src={isCompleted ? "/svg/done.svg" : "/svg/todo.svg"}
-          alt="Responsive"
+          alt="completeCheck"
           width="32"
           height="32"
           onClick={handleState}
