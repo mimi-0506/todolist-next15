@@ -12,7 +12,7 @@ export default function Memo() {
   const handleMemoModify = (
     e: React.FocusEvent<HTMLTextAreaElement, Element>
   ) => {
-    if (detail && e.target.value !== detail?.name)
+    if (detail && e.target.value !== detail?.memo)
       setDetail({ ...detail, memo: e.target.value });
   };
 
