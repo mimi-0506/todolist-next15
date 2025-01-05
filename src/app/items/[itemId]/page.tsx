@@ -32,15 +32,10 @@ export default function Item({
   }, []);
 
   const getDatas = async () => {
-    if (id) {
-      const nowData = await getDetailData(id);
-      setDetail(nowData);
-    } else {
-      const { itemId } = await params;
-      const nowData = await getDetailData(itemId);
-      setDetail(nowData);
-      setId(itemId);
-    }
+    const { itemId } = await params;
+    const nowData = await getDetailData(itemId);
+    setDetail(nowData);
+    setId(itemId);
   };
 
   const startLoading = () => {

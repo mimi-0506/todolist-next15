@@ -18,11 +18,13 @@ export default function ModifyButton({
   const handleModify = async () => {
     if (!detail || !id) return;
     startLoading();
+
+    //null 일시 api에서 막히므로 빈값도 string으로 가도록 해야 함
     await modifyState(
       {
         name: detail.name,
-        memo: detail.memo,
-        imageUrl: detail.imageUrl,
+        memo: detail.memo || "",
+        imageUrl: detail.imageUrl || "",
         isCompleted: detail.isCompleted,
       },
       id
