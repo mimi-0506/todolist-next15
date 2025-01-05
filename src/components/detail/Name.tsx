@@ -6,7 +6,7 @@ import { useRef, useEffect, useState } from "react";
 
 export default function Memo() {
   const { detail, setDetail } = useTodoListStore((state) => state);
-  const nameRef = useRef(null);
+  const nameRef = useRef<HTMLInputElement>(null);
   const [modify, setModify] = useState(false);
 
   useEffect(() => {

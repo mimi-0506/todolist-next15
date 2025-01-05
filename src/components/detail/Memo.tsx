@@ -3,7 +3,7 @@ import { useTodoListStore } from "@/providers/store-provider";
 import { useRef } from "react";
 export default function Memo() {
   const { detail, setDetail } = useTodoListStore((state) => state);
-  const memoRef = useRef(null);
+  const memoRef = useRef<HTMLTextAreaElement>(null);
 
   const handleMemoClick = () => {
     memoRef.current?.focus();
@@ -22,7 +22,7 @@ export default function Memo() {
       <div className="textareaContainer">
         <textarea
           ref={memoRef}
-          defaultValue={detail?.memo}
+          defaultValue={detail?.memo || ""}
           onBlur={handleMemoModify}
         />
       </div>

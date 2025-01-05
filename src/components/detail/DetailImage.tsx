@@ -5,13 +5,14 @@ import { useState, useRef, useEffect } from "react";
 import { useTodoListStore } from "@/providers/store-provider";
 import useSetImage from "@/hooks/useSetImage";
 import { ButtonLoading } from "../common/Loading";
+import { modifyData } from "@/types/types";
 
 export default function DetailImage() {
   const { detail, setDetail } = useTodoListStore((state) => state);
   const { setImage } = useSetImage();
   const [error, setError] = useState<string>("");
   const [loading, setLoading] = useState(false);
-  const imageRef = useRef(null);
+  const imageRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
     if (error !== "") alert(error);
@@ -41,7 +42,7 @@ export default function DetailImage() {
     }
 
     const imageUrl = await setImage(file);
-    setDetail({ ...detail, imageUrl: imageUrl });
+    setDetail({ ...detail, imageUrl: imageUrl } as modifyData);
 
     setError("");
     setLoading(false);

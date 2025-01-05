@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import Image from "next/image";
 import "@/styles/components.css";
 import useSetDatas from "../../hooks/useSetDatas";
@@ -41,7 +41,7 @@ const AddButton = ({
 export default function Input() {
   const { todos, dones } = useTodoListStore((state) => state);
   const { setDatas } = useSetDatas();
-  const inputRef = useRef(null);
+  const inputRef = useRef<HTMLInputElement>(null);
 
   const [loading, setLoading] = useState(false);
 
