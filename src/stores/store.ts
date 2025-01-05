@@ -11,6 +11,7 @@ export type TodoListActions = {
   setTodos: (newTodos: mainDatas[]) => void;
   setDones: (newDones: mainDatas[]) => void;
   setDetail: (newDetail: modifyData) => void;
+  resetDetail: () => void;
 };
 
 export type TodoListStore = TodoListState & TodoListActions;
@@ -29,5 +30,6 @@ export const createTodoListStore = (
     setTodos: (newTodos) => set((state) => ({ ...state, todos: newTodos })),
     setDones: (newDones) => set((state) => ({ ...state, dones: newDones })),
     setDetail: (newDetail) => set((state) => ({ ...state, detail: newDetail })),
+    resetDetail: () => set((state) => ({ ...state, detail: null })),
   }));
 };

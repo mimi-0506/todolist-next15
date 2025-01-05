@@ -17,7 +17,7 @@ export default function Item({
 }: {
   params: Promise<{ itemId: string }>;
 }) {
-  const { detail, setDetail } = useTodoListStore((state) => state);
+  const { detail, setDetail, resetDetail } = useTodoListStore((state) => state);
 
   const [id, setId] = useState<null | string>(null);
 
@@ -26,6 +26,9 @@ export default function Item({
 
   useEffect(() => {
     getDatas();
+    return () => {
+      resetDetail();
+    };
   }, []);
 
   const getDatas = async () => {
